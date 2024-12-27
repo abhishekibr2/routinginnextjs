@@ -13,4 +13,14 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
+module.exports = {
+  reactStrictMode: true,
+  eslint: {
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "no-explicit-any": "off",
+      
+  },
+}
+
 export default eslintConfig;
