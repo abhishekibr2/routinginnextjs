@@ -14,7 +14,7 @@ export async function GET() {
         console.error("Error fetching pages:", error);
         return NextResponse.json(
             { message: "Error fetching pages" },
-            { status: 500 }
+            { status: 400 }
         );
     }
 }
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
         console.error("Error creating page:", error);
         return NextResponse.json(
             { message: error.message || "Error creating page" },
-            { status: 500 }
+            { status: 400 }
         );
     }
 }

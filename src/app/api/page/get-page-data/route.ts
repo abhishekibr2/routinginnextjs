@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     console.error("Error fetching page:", error);
     return NextResponse.json(
       { message: "Error fetching page" },
-      { status: 500 }
+      { status: 404 }
     );
   }
 }
