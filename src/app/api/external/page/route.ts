@@ -15,7 +15,7 @@ export async function GET() {
         );
 
         // Add CORS headers
-        response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+        response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', '*');
 
@@ -28,7 +28,7 @@ export async function GET() {
         );
 
         // Add CORS headers
-        response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+        response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', '*');
 
@@ -41,7 +41,7 @@ export async function OPTIONS() {
     return new NextResponse(null, {
         status: 204,
         headers: {
-            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGINS || "",
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Max-Age': '86400',
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
                 { status: 401 }
             );
             // Add CORS headers
-            response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+            response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
             response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
             response.headers.set('Access-Control-Allow-Headers', '*');
             return response;
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
                 { status: 401 }
             );
             // Add CORS headers
-            response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+            response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
             response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
             response.headers.set('Access-Control-Allow-Headers', '*');
             return response;
@@ -84,7 +84,7 @@ export async function POST(request: Request) {
                 { status: 400 }
             );
             // Add CORS headers
-            response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+            response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
             response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
             response.headers.set('Access-Control-Allow-Headers', '*');
             return response;
@@ -99,7 +99,7 @@ export async function POST(request: Request) {
             { message: "Page Created Successfully.", status: 200, page: page }
         );
         // Add CORS headers
-        response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+        response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', '*');
         return response;
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
             { status: 400 }
         );
         // Add CORS headers
-        response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+        response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "");
         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', '*');
         return response;

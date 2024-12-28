@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
         return new NextResponse(null, {
             status: 204,
             headers: {
-                'Access-Control-Allow-Origin': 'http://localhost:3000',
+                'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGINS || "",
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Max-Age': '86400',
@@ -19,7 +19,7 @@ export function middleware(request: NextRequest) {
     }
 
     const response = NextResponse.next()
-    response.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000')
+    response.headers.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGINS || "")
     response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
     response.headers.set('Access-Control-Allow-Headers', '*')
 
