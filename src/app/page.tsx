@@ -56,7 +56,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ pageUrl: url, pageDescription}),
+        body: JSON.stringify({ pageUrl: url, pageDescription }),
       });
 
       const data = await response.json();
@@ -76,13 +76,13 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto py-8 px-4">
+    <div className="mx-auto py-8 px-4">
       <div className="font-semibold mb-4 text-center p-10 text-4xl">
         This is Dynamic Routing Test.
       </div>
-      <div className="grid gap-8 md:grid-cols-2">
-        {/* Form Section */}
-        <Card>
+      {/* <div className="grid gap-8 md:grid-cols-2"> */}
+      {/* Form Section */}
+      {/* <Card>
           <CardHeader>
             <CardTitle>Add New Page</CardTitle>
           </CardHeader>
@@ -116,9 +116,10 @@ export default function Home() {
               </Alert>
             )}
           </CardContent>
-        </Card>
+        </Card> */}
 
-        <Card>
+      <div className="flex justify-center w-full">
+        <Card className=" max-w-5xl">
           <CardHeader>
             <CardTitle>Available Pages</CardTitle>
           </CardHeader>
@@ -160,6 +161,7 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
+        {/* </div> */}
       </div>
     </div>
   );
