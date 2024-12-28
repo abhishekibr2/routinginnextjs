@@ -56,7 +56,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ pageUrl: url, pageDescription }),
+        body: JSON.stringify({ pageUrl: url, pageDescription}),
       });
 
       const data = await response.json();
@@ -118,7 +118,6 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        {/* Rest of the component remains the same */}
         <Card>
           <CardHeader>
             <CardTitle>Available Pages</CardTitle>
