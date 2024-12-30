@@ -2,6 +2,20 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { Page } from "@/models/Page.model";
 import { NextResponse } from "next/server";
 
+// Add OPTIONS handler
+export async function OPTIONS() {
+    return new NextResponse(null, {
+        status: 204,
+        headers: {
+            'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGINS || "",
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Max-Age': '86400',
+        },
+    });
+}
+
+
 export async function POST(request: Request) {
     try {
         await connectToDatabase();
