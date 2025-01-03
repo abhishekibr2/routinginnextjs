@@ -345,7 +345,7 @@ export default function Home() {
                           <Tooltip>
                             <TooltipTrigger>
                               <div className="text-sm text-muted-foreground">
-                                {"Hover to view configuration" || "No configuration"}
+                                {page.page_content ? "Hover to view configuration" : "No configuration"}
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
