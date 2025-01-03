@@ -345,7 +345,7 @@ export default function Home() {
                           <Tooltip>
                             <TooltipTrigger>
                               <div className="text-sm text-muted-foreground">
-                                {JSON.stringify(page.page_content) || "No configuration"}
+                                {"Hover to view configuration" || "No configuration"}
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
