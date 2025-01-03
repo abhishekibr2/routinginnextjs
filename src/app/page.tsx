@@ -349,7 +349,7 @@ export default function Home() {
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <pre className="text-xs whitespace-pre-wrap max-w-[300px]">
+                              <pre className="text-xs whitespace-pre-wrap max-w-[300px] max-h-[200px] overflow-y-auto">
                                 {page.page_content
                                   ? JSON.stringify(page.page_content, null, 2) // 2 spaces for indentation
                                   : "No configuration"}
