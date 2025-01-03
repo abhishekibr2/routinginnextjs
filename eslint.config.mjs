@@ -22,5 +22,3 @@ module.exports = {
       
   },
 }
-
-export default eslintConfig;
